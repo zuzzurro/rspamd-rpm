@@ -32,12 +32,13 @@ BuildRequires:    perl-Digest-MD5
 BuildRequires:    ragel
 BuildRequires:    systemd-rpm-macros
 BuildRequires:    sqlite-devel
+BuildRequires:    fmt-devel
 %{?systemd_requires}
 Requires:         logrotate
-Requires:         fmt
 Requires:         hyperscan
 Requires:         jemalloc
 Requires:         luajit
+Requires:         fmt
 
 
 %description
@@ -63,6 +64,7 @@ lua.
   -DENABLE_HYPERSCAN=ON \
   -DENABLE_JEMALLOC=ON \
   -DENABLE_LIBUNWIND=ON \
+  -DSYSTEM_FMT=ON \
   -DRSPAMD_USER=%{name} \
   -DRSPAMD_GROUP=%{name}
 
