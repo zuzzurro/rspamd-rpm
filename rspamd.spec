@@ -34,6 +34,11 @@ BuildRequires:    systemd-rpm-macros
 BuildRequires:    sqlite-devel
 %{?systemd_requires}
 Requires:         logrotate
+Requires:         fmt
+Requires:         hyperscan
+Requires:         jemalloc
+Requires:         luajit
+
 
 %description
 Rspamd is a rapid, modular and lightweight spam filter. It is designed to work
