@@ -1,0 +1,20 @@
+diff --git a/src/libserver/ssl_util.c b/src/libserver/ssl_util.c
+index 40214ed89..5430768a1 100644
+--- a/src/libserver/ssl_util.c
++++ b/src/libserver/ssl_util.c
+@@ -1075,7 +1075,7 @@ void
+ rspamd_ssl_ctx_config (struct rspamd_config *cfg, gpointer ssl_ctx)
+ {
+ 	struct rspamd_ssl_ctx *ctx = (struct rspamd_ssl_ctx *)ssl_ctx;
+-	static const char default_secure_ciphers[] = "HIGH:!aNULL:!kRSA:!PSK:!SRP:!MD5:!RC4";
++	static const char default_secure_ciphers[] = "PROFILE=SYSTEM";
+ 
+ 	if (cfg->ssl_ca_path) {
+ 		if (SSL_CTX_load_verify_locations (ctx->s, cfg->ssl_ca_path,
+@@ -1111,4 +1111,4 @@ rspamd_ssl_ctx_free (gpointer ssl_ctx)
+ 	rspamd_lru_hash_destroy (ctx->sessions);
+ 	SSL_CTX_free (ctx->s);
+ 	g_free (ssl_ctx);
+-}
+\ No newline at end of file
++}

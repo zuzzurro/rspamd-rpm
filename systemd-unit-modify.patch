@@ -1,0 +1,14 @@
+diff --git a/rspamd.service b/rspamd.service
+index 1d1180861..d2c213b7a 100644
+--- a/rspamd.service
++++ b/rspamd.service
+@@ -8,7 +8,8 @@ LimitNOFILE=1048576
+ NonBlocking=true
+ ExecStart=/usr/bin/rspamd -c /etc/rspamd/rspamd.conf -f
+ ExecReload=/bin/kill -HUP $MAINPID
+-User=_rspamd
++User=rspamd
++Group=rspamd
+ RuntimeDirectory=rspamd
+ RuntimeDirectoryMode=0755
+ Restart=always
