@@ -83,6 +83,7 @@ install -Dpm 0644 %{SOURCE1} %{buildroot}%{_presetdir}/80-rspamd.preset
 install -Dpm 0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/logrotate.d/rspamd
 install -Dpm 0644 %{SOURCE3} %{buildroot}%{_sysusersdir}/%{name}.conf
 install -Dpm 0644 rspamd.service %{buildroot}%{_unitdir}/rspamd.service
+install -m 0770 -o %{name} -g %{name} -Dd %{buildroot}%{_localstatedir}/log/%{name}/
 
 %post
 %systemd_post rspamd.service
@@ -134,3 +135,4 @@ install -Dpm 0644 rspamd.service %{buildroot}%{_unitdir}/rspamd.service
 %config(noreplace) %{_sysconfdir}/%{name}/{modules,scores}.d/*
 %{_unitdir}/%{name}.service
 %{_sysusersdir}/%{name}.conf
+%dir %{_localstatedir}/log/%{name}
