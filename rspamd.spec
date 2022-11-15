@@ -10,9 +10,10 @@ Source2:          rspamd.logrotate
 Source3:          rspamd.sysusers
 Source4:          rspamd.tmpfilesd
 
-Patch0:           fix-cmake.patch
-Patch1:           systemd-unit.patch
-Patch2:           use-system-ssl-ciphers.patch
+Patch0:           systemd-unit.patch
+Patch1:           use-system-ssl-ciphers.patch
+# Critical fix patch for https://github.com/rspamd/rspamd/issues/4329
+Patch2:           068714f9f5a96fbd94560211cec75775ee023d02.patch
 
 BuildRequires:    cmake
 BuildRequires:    gcc-c++
