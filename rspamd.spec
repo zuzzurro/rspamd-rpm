@@ -1,6 +1,6 @@
 Name:             rspamd
 Version:          3.4
-Release:          1%{?dist}
+Release:          2%{?dist}
 Summary:          Rapid spam filtering system
 License:          ASL 2.0 and LGPLv3 and BSD and MIT and CC0 and zlib
 URL:              https://www.rspamd.com/
