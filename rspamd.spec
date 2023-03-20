@@ -1,6 +1,6 @@
 Name:             rspamd
-Version:          3.4
-Release:          2%{?dist}
+Version:          3.5
+Release:          1%{?dist}
 Summary:          Rapid spam filtering system
 License:          ASL 2.0 and LGPLv3 and BSD and MIT and CC0 and zlib
 URL:              https://www.rspamd.com/
@@ -12,8 +12,6 @@ Source4:          rspamd.tmpfilesd
 
 Patch0:           systemd-unit.patch
 Patch1:           use-system-ssl-ciphers.patch
-# Critical fix patch for https://github.com/rspamd/rspamd/issues/4329
-Patch2:           068714f9f5a96fbd94560211cec75775ee023d02.patch
 
 BuildRequires:    cmake
 BuildRequires:    gcc-c++
