@@ -139,8 +139,8 @@ install -Dpm 0644 LICENSE.md %{buildroot}%{_docdir}/licenses/LICENSE.md
 %{_datadir}/%{name}/languages/stop_words
 %dir %{_datadir}/%{name}/{lualib,plugins,rules}
 %{_datadir}/%{name}/{lualib,plugins,rules}/*.lua
-%dir %{_datadir}/%{name}/lualib/{lua_content,lua_ffi,lua_magic,lua_scanners,lua_selectors,plugins,rspamadm}
-%{_datadir}/%{name}/lualib/{lua_content,lua_ffi,lua_magic,lua_scanners,lua_selectors,plugins,rspamadm}/*.lua
+%dir %{_datadir}/%{name}/lualib/*
+%{_datadir}/%{name}/lualib/*/*.lua
 %dir %{_datadir}/%{name}/rules/{controller,regexp}
 %{_datadir}/%{name}/rules/{controller,regexp}/*.lua
 %dir %{_datadir}/%{name}/www
