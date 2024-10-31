@@ -36,6 +36,7 @@ BuildRequires:    fmt-devel
 BuildRequires:    zlib-devel
 BuildRequires:    libzstd-devel
 BuildRequires:    libcurl-devel
+BuildRequires:    libarchive-devel
 
 BuildRequires:    systemd-rpm-macros
 
@@ -52,6 +53,7 @@ Requires:         fmt
 Requires:         zlib
 Requires:         libzstd
 Requires:         libcurl
+Requires:         libarchive
 
 %description
 Rspamd is a rapid, modular and lightweight spam filter. It is designed to work
