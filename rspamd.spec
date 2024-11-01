@@ -19,9 +19,9 @@ BuildRequires:    gcc-c++
 BuildRequires:    file-devel
 BuildRequires:    glib2-devel
 %if 0%{?fedora} >= 41
-Requires:         vectorscan-deve-
+BuildRequires:         vectorscan-devel
 %else
-Requires:         hyperscan-devel
+BuildRequires:         hyperscan-devel
 %endif
 BuildRequires:    jemalloc-devel
 BuildRequires:    lapack-devel
