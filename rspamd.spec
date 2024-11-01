@@ -18,7 +18,11 @@ BuildRequires:    gcc-c++
 
 BuildRequires:    file-devel
 BuildRequires:    glib2-devel
-BuildRequires:    hyperscan-devel
+%if 0%{?fedora} >= 41
+Requires:         vectorscan-deve-
+%else
+Requires:         hyperscan-devel
+%endif
 BuildRequires:    jemalloc-devel
 BuildRequires:    lapack-devel
 BuildRequires:    libevent-devel
@@ -45,7 +49,11 @@ BuildRequires:    systemd-rpm-macros
 
 %{?systemd_requires}
 %{?sysusers_requires_compat}
+%if 0%{?fedora} >= 41
+Requires:         vectorscan
+%else
 Requires:         hyperscan
+%endif
 Requires:         jemalloc
 Requires:         logrotate
 Requires:         openblas
