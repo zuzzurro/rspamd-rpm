@@ -28,6 +28,9 @@ BuildRequires:    libunwind-devel
 BuildRequires:    luajit-devel
 BuildRequires:    openblas-devel
 BuildRequires:    openssl-devel
+%if 0%{?fedora} >= 41
+BuildRequires:    openssl-devel-engine
+%endif
 BuildRequires:    pcre2-devel
 BuildRequires:    ragel
 BuildRequires:    sqlite-devel
@@ -97,7 +100,8 @@ rm -rf freebsd
   -DENABLE_BLAS=ON \
   -DSYSTEM_FMT=ON \
   -DSYSTEM_ZSTD=ON \
-  -DENABLE_URL_INCLUDE=ON
+  -DENABLE_URL_INCLUDE=ON \
+  -DNO_TARGET_VERSIONS=ON
 
 %cmake_build
 
