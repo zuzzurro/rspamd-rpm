@@ -18,10 +18,10 @@ BuildRequires:    gcc-c++
 
 BuildRequires:    file-devel
 BuildRequires:    glib2-devel
-%if 0%{?fedora} >= 41
-BuildRequires:         vectorscan-devel
+%ifarch aarch64
+BuildRequires:    vectorscan-devel
 %else
-BuildRequires:         hyperscan-devel
+BuildRequires:    hyperscan-devel
 %endif
 BuildRequires:    jemalloc-devel
 BuildRequires:    lapack-devel
@@ -49,7 +49,7 @@ BuildRequires:    systemd-rpm-macros
 
 %{?systemd_requires}
 %{?sysusers_requires_compat}
-%if 0%{?fedora} >= 41
+%ifarch aarch64
 Requires:         vectorscan
 %else
 Requires:         hyperscan
