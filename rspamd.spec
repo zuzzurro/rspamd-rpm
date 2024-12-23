@@ -178,6 +178,8 @@ install -Dpm 0644 LICENSE.md %{buildroot}%{_docdir}/licenses/LICENSE.md
 %config(noreplace) %{_sysconfdir}/%{name}/*.{inc,conf}
 %dir %{_sysconfdir}/%{name}/{local,maps,modules,override,scores}.d
 %config(noreplace) %{_sysconfdir}/%{name}/{local,maps,modules,override,scores}.d/*
+%dir %{_sysconfdir}/%{name}/{lua,modules}.local.d
+%{_sysconfdir}/%{name}/{lua,modules}.local.d/*
 
 %dir %attr(0750,%{name},%{name}) %{_rundir}/%{name}
 %dir %attr(0750,%{name},%{name}) %{_localstatedir}/log/%{name}
