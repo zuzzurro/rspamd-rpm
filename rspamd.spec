@@ -1,5 +1,5 @@
 Name:             rspamd
-Version:          3.12.1
+Version:          3.13.0
 Release:          1%{?dist}
 Summary:          Rapid spam filtering system
 License:          ASL 2.0 and LGPLv3 and BSD and MIT and CC0 and zlib
@@ -18,11 +18,7 @@ BuildRequires:    gcc-c++
 
 BuildRequires:    file-devel
 BuildRequires:    glib2-devel
-%ifarch aarch64
-BuildRequires:    vectorscan-devel
-%else
 BuildRequires:    hyperscan-devel
-%endif
 BuildRequires:    jemalloc-devel
 BuildRequires:    lapack-devel
 BuildRequires:    libevent-devel
@@ -49,11 +45,7 @@ BuildRequires:    systemd-rpm-macros
 
 %{?systemd_requires}
 %{?sysusers_requires_compat}
-%ifarch aarch64
-Requires:         vectorscan
-%else
 Requires:         hyperscan
-%endif
 Requires:         jemalloc
 Requires:         logrotate
 Requires:         openblas
@@ -157,6 +149,8 @@ install -Dpm 0644 LICENSE.md %{buildroot}%{_docdir}/licenses/LICENSE.md
 %{_datadir}/%{name}/{lualib,plugins,rules}/*.lua
 %dir %{_datadir}/%{name}/lualib/*
 %{_datadir}/%{name}/lualib/*/*.lua
+%dir %{_datadir}/%{name}/lualib/plugins/neural/providers
+%{_datadir}/%{name}/lualib/plugins/neural/providers/*.lua
 %dir %{_datadir}/%{name}/rules/{controller,regexp}
 %{_datadir}/%{name}/rules/{controller,regexp}/*.lua
 %dir %{_datadir}/%{name}/www
