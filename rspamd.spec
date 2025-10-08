@@ -18,11 +18,7 @@ BuildRequires:    gcc-c++
 
 BuildRequires:    file-devel
 BuildRequires:    glib2-devel
-%ifarch aarch64
 BuildRequires:    vectorscan-devel
-%else
-BuildRequires:    hyperscan-devel
-%endif
 BuildRequires:    jemalloc-devel
 BuildRequires:    lapack-devel
 BuildRequires:    libevent-devel
@@ -49,11 +45,7 @@ BuildRequires:    systemd-rpm-macros
 
 %{?systemd_requires}
 %{?sysusers_requires_compat}
-%ifarch aarch64
 Requires:         vectorscan
-%else
-Requires:         hyperscan
-%endif
 Requires:         jemalloc
 Requires:         logrotate
 Requires:         openblas
