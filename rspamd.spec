@@ -139,6 +139,7 @@ install -Dpm 0644 LICENSE.md %{buildroot}%{_docdir}/licenses/LICENSE.md
 
 %{_bindir}/rspam{adm,c,d}
 %{_bindir}/rspamd_stats
+%{_bindir}/mapstats
 
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/effective_tld_names.dat
