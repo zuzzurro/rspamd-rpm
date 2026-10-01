@@ -28,7 +28,7 @@ BuildRequires:    libunwind-devel
 BuildRequires:    luajit-devel
 BuildRequires:    openblas-devel
 BuildRequires:    openssl-devel
-%if 0%{?fedora} >= 41
+%if 0%{?fedora} >= 41 && 0%{?fedora} <= 44
 BuildRequires:    openssl-devel-engine
 %endif
 BuildRequires:    pcre2-devel
