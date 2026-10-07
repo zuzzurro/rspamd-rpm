@@ -2,7 +2,7 @@ diff --git a/src/libserver/ssl_util.c b/src/libserver/ssl_util.c
 index 8ee53b0fb..3e6416b69 100644
 --- a/src/libserver/ssl_util.c
 +++ b/src/libserver/ssl_util.c
-@@ -1095,7 +1095,7 @@ void rspamd_openssl_maybe_init(void)
+@@ -1277,7 +1277,7 @@ void rspamd_openssl_maybe_init(void)
  void rspamd_ssl_ctx_config(struct rspamd_config *cfg, gpointer ssl_ctx)
  {
  	struct rspamd_ssl_ctx *ctx = (struct rspamd_ssl_ctx *) ssl_ctx;
@@ -11,10 +11,3 @@ index 8ee53b0fb..3e6416b69 100644
  
  	if (cfg->ssl_ca_path) {
  		if (SSL_CTX_load_verify_locations(ctx->s, cfg->ssl_ca_path,
-@@ -1130,4 +1130,4 @@ void rspamd_ssl_ctx_free(gpointer ssl_ctx)
- 	rspamd_lru_hash_destroy(ctx->sessions);
- 	SSL_CTX_free(ctx->s);
- 	g_free(ssl_ctx);
--}
-\ No newline at end of file
-+}
